@@ -1,0 +1,18 @@
+const getcolor = () => {
+  //Hex code---
+  const randomNumber = Math.floor(Math.random() * 16777215);
+  const randomCode = "#" + randomNumber.toString(16);
+  document.body.style.backgroundColor = randomCode;
+
+  document.querySelector("#colcode").innerText = randomCode;
+
+  navigator.clipboard.writeText(randomCode);
+};
+
+// Event call---
+document.querySelector("#btn").addEventListener(
+    "click",
+    getcolor);
+
+// Initial call---
+getcolor();
